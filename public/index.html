@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧠 Boomer ↔ Gen Z Translator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🧠 Boomer ↔ Gen Z Translator</h1>
+            <p>Bridge the generational gap with AI-powered translation!</p>
+            
+            <div class="controls">
+                <button id="darkModeToggle" class="control-btn">🌙 Dark Mode</button>
+                <div class="mode-toggle">
+                    <span class="mode-label">👴 Boomer → Gen Z 🧢</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="modeToggle">
+                        <span class="slider"></span>
+                    </label>
+                    <span class="mode-label hidden" id="reverseModeLabel">🧢 Gen Z → Boomer 👴</span>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="translator-section">
+                <div class="input-section">
+                    <label for="inputText" id="inputLabel">Enter your Boomer phrase:</label>
+                    <div class="input-wrapper">
+                        <textarea 
+                            id="inputText" 
+                            placeholder="Type something like 'I'm feeling happy today'..."
+                            rows="3"
+                        ></textarea>
+                        <button id="voiceBtn" class="voice-btn" title="Voice Input">🎤</button>
+                    </div>
+                    
+                    <div class="action-buttons">
+                        <button id="translateBtn" class="primary-btn">✨ Translate</button>
+                        <button id="surpriseBtn" class="secondary-btn">🎲 Surprise Me</button>
+                    </div>
+                </div>
+
+                <div class="output-section">
+                    <div class="z-meter-container">
+                        <label>Z-Slang Intensity Meter:</label>
+                        <div class="z-meter">
+                            <div class="z-meter-fill" id="zMeterFill"></div>
+                            <span class="z-meter-text" id="zMeterText">0%</span>
+                        </div>
+                    </div>
+
+                    <div class="result-container" id="resultContainer">
+                        <div class="result-placeholder">
+                            <p>🔮 Your translation will appear here...</p>
+                        </div>
+                    </div>
+
+                    <button id="copyBtn" class="copy-btn hidden">📋 Copy that Slay</button>
+                </div>
+            </div>
+
+            <div class="history-section">
+                <h3>📜 Translation History</h3>
+                <div class="history-container" id="historyContainer">
+                    <p class="history-placeholder">No translations yet. Start translating to build your history!</p>
+                </div>
+                <button id="clearHistoryBtn" class="clear-btn">🗑️ Clear History</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>Powered by Claude AI 🤖 | Made with 💜 for bridging generations</p>
+        </footer>
+    </div>
+
+    <div id="loadingOverlay" class="loading-overlay hidden">
+        <div class="loading-spinner">
+            <div class="spinner"></div>
+            <p>Translating... ✨</p>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
